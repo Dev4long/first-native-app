@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, Button} from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput} from 'react-native';
 
 export default function App() {
   
@@ -9,19 +9,21 @@ export default function App() {
 
   
   return (
-    <View style={styles.container}>
-      <Text>{text}</Text>
-      <Button title="Start" onPress={() => changeText('Deez')}/>
+    <View style={styles.homeScreen}>
+      <View style ={{flexDirection: 'row', justifyContent: 'space-between', alignIems: 'center'}}>
+        <TextInput placeholder="Write down your goal" style={{ width: 250, borderColor: 'black', borderWidth: 2}}/>
+        <Button title='submit'/>
+     </View>
+     <View>
+
+     </View>
       <StatusBar style="auto" />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  homeScreen: {
+    padding: 50
   },
 });
